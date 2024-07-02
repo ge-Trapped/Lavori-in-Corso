@@ -11,18 +11,3 @@ def testDivisione():
     assert calcolatrice.divisione(10, 5) == 2
     with pytest.raises(ValueError):
         calcolatrice.divisione(1, 0)
-
-# Aggiungi la funzione sottrazione
-
-# Aggiungi la funzione moltiplicazione
-
-# Aggiungi una funzione magicNumbers
-
-# Bonus: prevedi di usare l'operatore in nell'assert
-
-
-# def testFunzioneCheRestituisceUnaLista():
-#     assert 5 in funzioneCheRestituisceUnaLista(5)
-
-# def funzioneCheRestituisceUnaLista(a) -> list:
-#     return [a]
