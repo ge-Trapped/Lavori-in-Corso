@@ -40,3 +40,5 @@ def testTriangolo():
     assert t.sommaAngoli() == sum(angoli)
 
     assert t.calcolaAltezza() == t.lati[1] * math.sin(t.angoli[1])
+
+    assert t.calcolaAltezza() == pytest.approx(200, rel=1e-5)
