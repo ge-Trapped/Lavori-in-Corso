@@ -11,7 +11,6 @@ def testSottrazione():
     assert calcolatrice.sottrazione(0, 0) == 0
     assert calcolatrice.sottrazione(4, 5) < 0
 
-
 def moltiplicazione():
     assert calcolatrice.moltiplicazione(3, 3) == 9
     assert calcolatrice.moltiplicazione(0, 10) == 0
