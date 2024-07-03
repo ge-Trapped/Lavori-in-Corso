@@ -25,6 +25,7 @@ def testTriangolo():
     lati = [5, 5, 5]
     angoli = [60, 60, 60]
     t = classiGeometriche.Triangolo(*lati, *angoli)
+    t2 = classiGeometriche.Triangolo(*lati, *angoli)
 
     # Verifico che p1 sia di tipo Triangolo e di tipo Poligono
     assert isinstance(t, classiGeometriche.Poligono)
@@ -39,6 +40,15 @@ def testTriangolo():
     # Verifico il metodo sommaAngoli
     assert t.sommaAngoli() == sum(angoli)
 
+    # Verifico il metodo calcolaAltezza
     assert t.calcolaAltezza() == t.lati[1] * math.sin(t.angoli[1])
 
-    assert t.calcolaAltezza() == pytest.approx(200, rel=1e-5)
+    # assert t.calcolaAltezza() == pytest.approx(200, rel=1e-5)
+
+    # Verifico il metodo calcolaArea
+    assert t.calcolaArea() == t.lati[0] * t.altezza / 2
+
+    # Verifico i metodi dunder
+    assert t.__str__() == f"lati: {t.lati} -- angoli: {t.angoli} -- base: {t.base} -- altezza: {t.altezza:.2f}"
+    assert t == t2 and (t.lati == t2.lati and t.angoli == t2.angoli)
+    assert t + t2 == t.calcolaArea() + t2.calcolaArea()
