@@ -154,4 +154,3 @@ assert isinstance(t1, Poligono)
 # print(t1 + t2)
 
 # print(sommaPoligoni(p1, t1))
-
