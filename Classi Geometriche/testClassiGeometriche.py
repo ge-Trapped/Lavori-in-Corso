@@ -2,22 +2,19 @@ import pytest
 import classiGeometriche
 
 def testPoligono():
-    poligono = classiGeometriche.Poligono(lati = [2, 3, 4], angoli = [90, 45, 45])
+    # Creo un oggetto di tipo Poligono
+    lati = [5, 5, 5]
+    angoli = [60, 60, 60]
+    p = classiGeometriche.Poligono(lati = lati, angoli = angoli)
 
-    assert poligono.calcolaPerimetro() == 9
-    assert poligono.sommaAngoli() == 180
-    assert isinstance(poligono, classiGeometriche.Poligono)
+    # Verifico che p1 è di tipo Poligono
+    assert isinstance(p, classiGeometriche.Poligono)
 
-def testPoligono(lati = [2, 3, 4], angoli = [90, 45, 45]):
+    # Testo il costruttore di Poligono (verificando la correttezza dei dati inizializzati)
+    assert p.lati == lati and p.angoli == angoli
 
-    assert classiGeometriche.Poligono.calcolaPerimetro() == 9
-    assert classiGeometriche.Poligono.sommaAngoli() == 180
-    assert isinstance(classiGeometriche.Poligono)
+    # Verifico il metodo calcolaPerimetro
+    assert p.calcolaPerimetro() == sum(lati)
 
-
-
-
-
-    # 1. Creo un oggetto di tipo Poligono
-    # 2. Testo le sue funzonalità (i suoi metodi, i suoi attributi, i suoi metodi dunder ed il suo tipo)
-    # NB: ricorda che puoi verificare con un assert il tipo di un oggetto con la funzione isinstance
+    # Verifico il metodo sommaAngoli
+    assert p.sommaAngoli() == sum(angoli)
